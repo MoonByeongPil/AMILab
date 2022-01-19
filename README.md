@@ -7,14 +7,27 @@ torch로만 바꿔주면 되는 목록
 where
 ones_like
 reshape
+square
+sqrt
+multiply
+
 
 
 주의할 함수들
 tf.tile(input, multiples, name=None)
 torch_tensor.repeat((num, ...)
 
+tf.reduce_mean
+torch.mean --> 이렇게 하면 torch(z,3)이라 했을 때 z가 정수로 이루어진 tensor면 오류남. floating pt이거나 complex dtype이어야 한다.
+
 tf.reduce_sum
 torch.sum
+
+tf.is_nan
+torch.isnan
+
+tf.truediv
+torch.div --> truediv 없음. 둘 다 출력 tensor
 
 tf.argsort(values, axis=-1, direction='ASCENDING')
 torch.argsort(input, dim=-1, descending=False) 

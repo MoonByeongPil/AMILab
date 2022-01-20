@@ -10,6 +10,7 @@ reshape
 square
 sqrt
 multiply
+subtract
 
 
 
@@ -22,6 +23,9 @@ torch.mean --> 이렇게 하면 torch(z,3)이라 했을 때 z가 정수로 이�
 
 tf.reduce_sum
 torch.sum
+
+tf.reduce_max
+torch.max(input, dim, keepdim=False, out=None) -> (Tensor, LongTensor)
 
 tf.is_nan
 torch.isnan

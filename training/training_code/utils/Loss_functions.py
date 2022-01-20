@@ -102,7 +102,7 @@ def calc_loss_d_refined_mask(output, y, z_refined):
     output_flat_masked = torch.multiply(output_flat, mask_one_flat)    #z_refined가 true면 reshape된 output 결과 그대로, false면 0
     
     output_max = torch.max(output_flat_masked,1)    #output masked를 1차원에 대해 max값 취함. 
-    matrix_max = torch.transpose(torch.reshape(output_max.repeat(multiply), [ multiply[0], torch.numael(output_max)]))   #위 행렬을 256*256
+    matrix_max = torch.transpose(torch.reshape(output_max.repeat(multiply), [ multiply[0], torch.numel(output_max)]))   #위 행렬을 256*256
     #multiply[0] = 행렬의 전체 요소 개수를 의미 (크기 의미)
     #output_max(H)가 가로로 256*256개 늘어서 있는 모양###output_max.repeat(multiply)##tf.tile(output_max, multiply)
     output_min = torch.min(output_flat_masked,1)    #output masked를 1차원에 대해 min값 취함. 
